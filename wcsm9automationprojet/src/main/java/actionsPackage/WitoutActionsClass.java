@@ -24,18 +24,21 @@ public class WitoutActionsClass {
 	     
 
 	    // perform mouseHover on WATCH JEWELLERY
-	     WebElement watchJewelleryTarget = driver.findElement(By.xpath("//a[text()='Watch Jewellery ']"));
+//	     WebElement watchJewelleryTarget = driver.findElement(By.xpath("//a[text()='Watch Jewellery ']"));
 	
 	     Actions act = new Actions(driver);
-	     Thread.sleep(2000);
-	     act.moveToElement(watchJewelleryTarget).perform();
+//	     Thread.sleep(2000);
+//	     act.moveToElement(watchJewelleryTarget).perform();
 	     
 	     
-	     Thread.sleep(2000);
-	     driver.findElement(By.xpath("//a[text()='Band']")).click();
+//	     Thread.sleep(2000);
+//	     driver.findElement(By.xpath("//a[text()='Band']")).click();
 	     
 	     Thread.sleep(2000);
-	     WebElement coinsTarget = driver.findElement(By.partialLinkText("a[text()='Coins ']"));
+	     WebElement coinsTarget = driver.findElement(By.xpath("//a[text()='Coins ']"));
+	     act.moveToElement(coinsTarget).perform();
+	     driver.findElement(By.xpath("//span[text()='Coins by Design']")).click();
+	     
 	     
 	     
 	     

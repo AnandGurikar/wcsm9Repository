@@ -26,8 +26,16 @@ public class ComtextClickORRightClick {
 		  Actions act = new Actions(driver);
 		  Thread.sleep(2000);
 		  act.contextClick(ele1).perform();
+		  driver.findElement(By.xpath("//div[text()='Yes']")).click();
+		  WebElement ver1 = driver.findElement(By.xpath("//span[text()='You selected \"Yes\"']"));
 		  
-		  
+		  if (ver1.isDisplayed()) {
+			  System.out.println("Right is Done");
+			
+		}
+		  else {
+			System.out.println("Right is not Done");
+		}
 		  
 	}
 
