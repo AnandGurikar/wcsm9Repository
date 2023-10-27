@@ -19,13 +19,23 @@ public class DoubleClick {
 		  
 		  driver.findElement(By.xpath("//section[text()='Button']")).click();
 		  Thread.sleep(2000);
-		  driver.findElement(By.xpath("//a[text()='Right Click']")).click();
+		  driver.findElement(By.xpath("//a[text()='Double Click']")).click();
 		  
+		  WebElement yesTarget = driver.findElement(By.xpath("(//button[text()='Yes'])[1]"));
+		  WebElement noTarget = driver.findElement(By.xpath("(//button[text()='No'])[2]"));
+		  WebElement scalTarget = driver.findElement(By.xpath("//button[text()='5'"));
 		  
-		  WebElement ele1 = driver.findElement(By.xpath("//button[text()='Right Click']"));
+//		  WebElement ele1 = driver.findElement(By.xpath("//button[text()='Right Click']"));
 		  Actions act = new Actions(driver);
 		  Thread.sleep(2000);
-		  act.contextClick(ele1).perform();
+		  act.doubleClick(yesTarget).perform();
+		  Thread.sleep(2000);
+		  act.doubleClick(noTarget).perform();
+		  Thread.sleep(2000);
+		  act.doubleClick(scalTarget).perform();
+		  
+		  
+		  
 		  
 		  
 		  
