@@ -10,14 +10,14 @@ public class AirvistaraUsingFirefox {
 // Create an instance of FirefoxOptions class
 		FirefoxOptions options = new FirefoxOptions();
 
-// Add Firefox switch to disable notification			
+		// Add Firefox switch to disable notification			
 		options.addPreference("permissions.default.desktop-notification",2);
 		options.addPreference("network.cookie.cookieBehavior", 2);
 		
-		 WebDriver driver=new FirefoxDriver(options);
-		 driver.get("https://www.airvistara.com/in/en");
-		 Thread.sleep(2000);
-		 driver.manage().window().maximize();
+		WebDriver driver=new FirefoxDriver(options);
+		driver.get("https://www.airvistara.com/in/en");
+		Thread.sleep(2000);
+		driver.manage().window().maximize();
 		 
 		
 	}

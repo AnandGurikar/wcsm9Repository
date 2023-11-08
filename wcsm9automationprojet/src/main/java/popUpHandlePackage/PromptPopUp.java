@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ConfirmPopUp {
+public class PromptPopUp {
 	public static void main(String[] args) throws InterruptedException {
 		
 		WebDriver driver = new ChromeDriver();
@@ -17,21 +17,23 @@ public class ConfirmPopUp {
 		
 		driver.findElement(By.xpath("//section[text()='Popups']")).click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath("//section[text()='Javascript']")).click();
 		
-		driver.findElement(By.xpath("//a[text()='Confirm']")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//button[text()='Confirm Box']")).click();//Confirm Box
+		driver.findElement(By.xpath("//a[text()='Prompt']")).click();
+		Thread.sleep(6000);
+		driver.findElement(By.xpath("//button[text()='Prompt Alert Box']")).click();//Prompt Alert Box
 		
-		Alert conPopUp = driver.switchTo().alert();
-
-		System.out.println(conPopUp.getText());
-
-
-		Thread.sleep(2000);
-		conPopUp.accept();
+		Thread.sleep(6000);
+		Alert promptAlertBox = driver.switchTo().alert();
+		Thread.sleep(6000);
+		driver.switchTo().activeElement().sendKeys("yes");
+		promptAlertBox.sendKeys("Yes");
+		System.out.println(promptAlertBox.getText());
+		Thread.sleep(6000);
+		promptAlertBox.accept();
 //		conPopUp.dismiss();
+		driver.close();
 		
 		
 		
